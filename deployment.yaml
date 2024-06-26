@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngin
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: ngin
+  template:
+    metadata:
+      labels:
+        app: ngin
+    spec:
+      containers:
+        - name: ngin
+          image: gcr.io/wik/subu:nya
+          ports:
+            - containerPort: 80
